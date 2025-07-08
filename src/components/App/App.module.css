@@ -1,0 +1,26 @@
+.page {
+  position: relative;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  font-family: system-ui, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+.container {
+  width: 100%;
+  max-width: 32rem;
+  background-color: var(--color-bg-alt);
+  box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
+  z-index: 3;
+  border-radius: 0.5rem;
+}
+
+.list {
+  list-style: none;
+  max-height: 60vh;
+  overflow-y: auto;
+}

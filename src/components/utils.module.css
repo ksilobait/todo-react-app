@@ -1,0 +1,7 @@
+.divider {
+  border-top: 1px solid var(--color-border);
+}
+
+.dividerStrong {
+  border-top: 3px solid var(--color-border);
+}

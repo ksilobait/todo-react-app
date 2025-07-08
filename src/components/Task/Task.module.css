@@ -1,0 +1,41 @@
+.taskRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  min-height: 4rem;
+}
+
+.task {
+  flex: 1;
+  font-size: 1.25rem;
+  cursor: text;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.taskEditInput {
+  flex: 1;
+  font-size: 1.25rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.taskDone {
+  text-decoration: line-through;
+  color: var(--color-text-muted);
+  opacity: 0.6;
+}
+
+.delete {
+  background-color: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+.delete:hover {
+  color: var(--color-danger);
+}
