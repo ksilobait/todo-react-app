@@ -1,6 +1,6 @@
 .themeToggle {
   position: absolute;
-  right: calc(50% - 16rem + 1rem);
+  right: clamp(1rem, calc(50% - 16rem + 1rem), 50%);
   width: 2.5rem;
   height: 2.5rem;
   font-size: 1.2rem;
