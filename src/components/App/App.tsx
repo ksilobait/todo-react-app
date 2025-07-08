@@ -9,6 +9,7 @@ import { ThemeToggle } from "../ThemeToggle/ThemeToggle";
 
 export default function App() {
   const TASKS_STORAGE_KEY = "tasks";
+  const THEME_STORAGE_KEY = "theme";
 
   const [tasks, setTasks] = useState<Task[]>(() => {
     const saved = localStorage.getItem(TASKS_STORAGE_KEY);
@@ -16,7 +17,10 @@ export default function App() {
   });
   const [text, setText] = useState("");
   const [filter, setFilter] = useState<Filter>("all");
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+    const saved = localStorage.getItem(THEME_STORAGE_KEY);
+    return saved === "dark" ? true : false;
+  });
   const listEndRef = useRef<HTMLLIElement | null>(null);
 
   const activeCount = tasks.filter((task) => !task.completed).length;
@@ -33,6 +37,10 @@ export default function App() {
 
   useEffect(() => {
     document.body.classList.toggle("dark-theme", darkMode);
+  }, [darkMode]);
+
+  useEffect(() => {
+    localStorage.setItem(THEME_STORAGE_KEY, darkMode ? "dark" : "light");
   }, [darkMode]);
 
   useEffect(() => {
